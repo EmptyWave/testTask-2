@@ -1,0 +1,30 @@
+База данных test_news
+
+таблица news
+ ПОЛЕ           ТИП
+news_id     PRIMARY_KEY
+date        DATE
+theme_id    INT
+text        TEXT utf-8
+title       VARCAHAR(255) utf-8
+
+(поле theme_id из таблицы news сделать FOREIGN KEY(внешний ключ) поля theme_id с указанием ON DELETE CASCADE) не обязательно, только если раньше делали!
+
+
+таблица themes
+--
+-- Дамп данных таблицы `themes`
+--
+CREATE TABLE IF NOT EXISTS `themes` (
+  `theme_id` int(11) NOT NULL,
+  `theme_title` varchar(255) NOT NULL,
+  PRIMARY KEY (`theme_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `themes` (`theme_id`, `theme_title`) VALUES
+(1, 'Наука'),
+(2, 'Спорт'),
+(3, 'Интернет'),
+(4, 'Авто'),
+(5, 'Глямур'),
+(6, 'Искусство');
